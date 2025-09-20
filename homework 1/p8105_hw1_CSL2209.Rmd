@@ -1,0 +1,44 @@
+---
+title: "p8105_hw1_csl2209"
+author: "Casandra Laney"
+date: "2025-09-20"
+output: github_document
+---
+
+
+## Problem 1 
+
+Let's import the dataset and load the package
+
+```{r}
+library(tidyverse)
+library(moderndive)
+
+data("early_january_weather")
+```
+
+
+The dataset 'early_january_weather' contains 15 variables of weather data collected at EWR. 
+
+Important variables include:
+
+* 'temp': the temperature in F.
+
+* 'wind_dir': direction of the wind in degrees
+
+* 'wind_speed': speed of the wind in mph
+
+* 'wind_gust': gust speed of wind in mph
+
+* 'precip': the precipitation in inches
+
+* 'time_hour': the date and hour of the recording
+
+The dataset has `r ncol(early_january_weather)` columns and and `r nrow(early_january_weather)` rows.
+
+The mean temperature is `r mean(early_january_weather$temp)`.
+
+```{r}
+ggplot(early_january_weather, aes(x = time_hour, y = temp))
+```
+

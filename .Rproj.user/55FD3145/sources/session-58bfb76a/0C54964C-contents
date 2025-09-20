@@ -1,0 +1,18 @@
+## Cassie Laney
+## 2025 - 09 - 04
+##
+## this script creates a plot dataframe and makes two plots
+
+library(tidyverse)
+
+
+## lets make a more interesting dataframe
+
+plot_df =
+  tibble(
+    x = rnorm(1000, mean = 1, sd =.5),
+    y = 1 + 2 * x + rnorm(1000)
+  )
+
+ggplot(plot_df, aes(x = x)) + geom_histogram()
+ggplot(plot_df, aes(x = x, y = y*2)) + geom_point()
