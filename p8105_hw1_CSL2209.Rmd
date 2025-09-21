@@ -71,15 +71,18 @@ Let's try to take the mean of each variable.
 
 * vec_logical: `r mean(example_df$vec_logical)`
 
-* vec_char: `r mean(example_df$vec_character)`
+* vec_char: `r mean(example_df$vec_char)`
 
 * vec_factor: `r mean(example_df$vec_factor)`
 
-**The character and factor vectors did not work, while the randon=m and logical vectors did.**
+**The character and factor vectors did not work, while the random and logical vectors did.**
 
 Let's try it again, applying the as.numeric function.
 
-```{r}
-
+```{r echo=TRUE, results='hide'}
+as.numeric(example_df$vec_logical)
+as.numeric(example_df$vec_char)
+as.numeric(example_df$vec_factor)
 ```
 
+**'as.numeric' changes the logical vector into 1s and 0s, changes the character vector into NAs, and turns the class values in the factor vector into 1, 2, or 3s. This happens because R cannot assign numbers to arbitrary text. Because the logical and factor vectors have categories that can be assigned integers (class or true/false), it can be turned into a numeric vector.**
